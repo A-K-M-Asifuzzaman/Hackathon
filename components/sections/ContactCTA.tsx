@@ -3,7 +3,6 @@ import { site, telHref, mailtoHref } from "@/lib/site";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
-import { FigureImage } from "@/components/ui/FigureImage";
 import { QuoteForm } from "@/components/sections/QuoteForm";
 import { IconMail, IconPhone, IconPin } from "@/components/ui/Icons";
 
@@ -30,7 +29,7 @@ export function ContactCTA() {
                 <div>
                   <dt className="caption text-cocoa/50">{contact.visitLabel}</dt>
                   <dd className="mt-2 text-cocoa">{site.address.full}</dd>
-                  <dd className="mt-1 text-[14px] text-cocoa/62">{contact.hours}</dd>
+                  <dd className="mt-1 text-[14px] text-cocoa/62">{contact.landmark}</dd>
                 </div>
               </div>
 
@@ -68,21 +67,32 @@ export function ContactCTA() {
               </div>
             </dl>
 
-            <a
-              href={contact.map.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="figure-link mt-10 block"
-            >
-              <FigureImage
-                src={contact.map.src}
-                alt={contact.map.alt}
-                ratio="16/9"
-                sizes="(max-width: 1024px) 92vw, 560px"
-              />
-              <p className="caption mt-4 text-cocoa/58">{contact.map.caption}</p>
-              <div className="figure-rule mt-3" />
-            </a>
+            <div className="mt-10">
+              <div
+                className="border"
+                style={{ borderColor: "var(--hairline-strong)", aspectRatio: "16 / 9" }}
+              >
+                <iframe
+                  src={contact.map.embed}
+                  title={contact.map.title}
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="h-full w-full"
+                  style={{ border: 0, filter: "saturate(0.72) contrast(1.02)" }}
+                />
+              </div>
+              <div className="mt-4 flex flex-wrap items-baseline justify-between gap-3">
+                <p className="caption text-cocoa/58">{contact.map.caption}</p>
+                <a
+                  href={contact.map.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="brass-link"
+                >
+                  {contact.map.linkLabel}
+                </a>
+              </div>
+            </div>
           </Reveal>
 
           <Reveal delay={80}>
