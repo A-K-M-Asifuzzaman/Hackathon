@@ -42,7 +42,7 @@ export const intro = {
   link: { label: "See our collections", href: "#collections" },
   image: {
     src: "/images/showroom-wide.jpg",
-    alt: "Marble-topped dining table with high-backed leather chairs on the Heaven Furniture Mart showroom floor",
+    alt: "A hand-carved sofa set with a glass-topped coffee table and marble side table on the Heaven Furniture Mart showroom floor",
     caption: "Agrabad Access Road, Chattogram",
   },
 } as const;

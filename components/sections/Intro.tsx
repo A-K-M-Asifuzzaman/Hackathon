@@ -33,19 +33,19 @@ export function Intro() {
         </div>
       </Container>
 
-      <div id="showroom" className="mt-20 md:mt-28 lg:mt-32">
-        <Reveal>
-          <div className="pl-[var(--gutter)] lg:pl-[max(calc((100vw-1280px)/2+80px),80px)]">
+      <Container as="div" className="mt-20 md:mt-28 lg:mt-32">
+        <div id="showroom" className="grid grid-cols-1 lg:grid-cols-12 lg:gap-x-8">
+          <Reveal className="lg:col-span-9 lg:col-start-4">
             <FigureImage
               src={intro.image.src}
               alt={intro.image.alt}
-              ratio="3/2"
-              sizes="(max-width: 768px) 92vw, 88vw"
+              ratio="16/9"
+              sizes="(max-width: 1024px) 92vw, 940px"
             />
             <p className="caption mt-5 text-cocoa/72">{intro.image.caption}</p>
-          </div>
-        </Reveal>
-      </div>
+          </Reveal>
+        </div>
+      </Container>
     </section>
   );
 }
