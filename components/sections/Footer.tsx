@@ -25,12 +25,12 @@ export function Footer() {
 
           <nav aria-label="Collections">
             <p className="caption text-ivory/62">Collections</p>
-            <ul className="mt-6 flex flex-col gap-3">
+            <ul className="mt-4 flex flex-col">
               {footer.columns.collections.map((item) => (
                 <li key={item.label}>
                   <a
                     href={item.href}
-                    className="text-[14px] text-ivory/72 transition-colors duration-300 hover:text-brass-lift"
+                    className="flex min-h-[44px] items-center text-[14px] text-ivory/72 transition-colors duration-300 hover:text-brass-lift"
                   >
                     {item.label}
                   </a>
@@ -41,17 +41,17 @@ export function Footer() {
 
           <div>
             <p className="caption text-ivory/62">Visit</p>
-            <address className="mt-6 flex flex-col gap-3 not-italic text-[14px] text-ivory/72">
-              <span>{site.address.full}</span>
+            <address className="mt-4 flex flex-col not-italic text-[14px] text-ivory/72">
+              <span className="py-2">{site.address.full}</span>
               <a
                 href={telHref}
-                className="tnum transition-colors duration-300 hover:text-brass-lift"
+                className="tnum flex min-h-[44px] items-center transition-colors duration-300 hover:text-brass-lift"
               >
                 {site.phone.display}
               </a>
               <a
                 href={mailtoHref}
-                className="break-all transition-colors duration-300 hover:text-brass-lift"
+                className="flex min-h-[44px] items-center break-all transition-colors duration-300 hover:text-brass-lift"
               >
                 {site.email}
               </a>
@@ -79,12 +79,12 @@ export function Footer() {
               })}
             </ul>
 
-            <nav aria-label="Footer" className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
+            <nav aria-label="Footer" className="mt-6 flex flex-wrap gap-x-6">
               {nav.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-[12px] uppercase tracking-[0.16em] text-ivory/62 transition-colors duration-300 hover:text-brass-lift"
+                  className="flex min-h-[44px] items-center text-[12px] uppercase tracking-[0.16em] text-ivory/62 transition-colors duration-300 hover:text-brass-lift"
                 >
                   {item.label}
                 </a>

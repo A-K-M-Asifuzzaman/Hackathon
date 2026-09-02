@@ -42,7 +42,7 @@ export function Header() {
       }}
     >
       <div className="container-hfm flex h-[72px] items-center justify-between gap-8 md:h-[88px]">
-        <a href="#top" className="shrink-0 leading-none" aria-label={`${site.name}, home`}>
+        <a href="#top" className="shrink-0 py-2 leading-none" aria-label={`${site.name}, home`}>
           <span
             className="block font-[family-name:var(--font-display)] text-[19px] tracking-[0.16em] text-ivory md:text-[22px]"
             style={{ fontWeight: 400 }}

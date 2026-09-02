@@ -223,6 +223,13 @@ button {
   padding-bottom: 4px;
 }
 
+/* Keeps the hairline underline tight to the text while the touch target stays 44px. */
+.brass-link::before {
+  content: "";
+  position: absolute;
+  inset: -10px -8px;
+}
+
 .brass-link::after {
   content: "";
   position: absolute;
