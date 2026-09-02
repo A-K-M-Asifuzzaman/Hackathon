@@ -38,6 +38,9 @@
   }
 }
 
+/* Base element styles must be layered, or they outrank every Tailwind utility. */
+@layer base {
+
 * {
   border-color: var(--hairline);
 }
@@ -103,6 +106,8 @@ textarea,
 button {
   font: inherit;
   color: inherit;
+}
+
 }
 
 /* ---------- layout ---------- */
@@ -264,10 +269,16 @@ button {
 /* ---------- reveal ---------- */
 
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
   transition: opacity 700ms var(--ease-editorial), transform 700ms var(--ease-editorial);
   transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* Hidden only where scripting can bring it back. */
+@media (scripting: enabled) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 .reveal[data-visible="true"] {

@@ -23,6 +23,13 @@ export function Reveal({
     const node = ref.current;
     if (!node) return;
 
+    // Anything already in or above the viewport when JS boots must not wait for
+    // an intersection that will never come.
+    if (node.getBoundingClientRect().top < window.innerHeight) {
+      setVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
@@ -32,7 +39,7 @@ export function Reveal({
           }
         }
       },
-      { rootMargin: "0px 0px -12% 0px", threshold: 0.05 }
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.01 }
     );
 
     observer.observe(node);
