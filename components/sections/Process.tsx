@@ -29,14 +29,14 @@ export function Process() {
                 >
                   <span
                     aria-hidden="true"
-                    className="absolute left-0 top-0 hidden h-2.5 w-px bg-brass md:block"
+                    className="absolute left-0 top-0 hidden h-2.5 w-px bg-brass-deep md:block"
                   />
-                  <span className="tnum shrink-0 font-[family-name:var(--font-display)] text-[2rem] font-light leading-none text-brass md:text-[2.75rem]">
+                  <span className="tnum shrink-0 font-[family-name:var(--font-display)] text-[2rem] font-light leading-none brass-ctx md:text-[2.75rem]">
                     {step.index}
                   </span>
                   <div className="md:mt-7">
                     <h3 className="h3 text-cocoa">{step.title}</h3>
-                    <p className="mt-3 max-w-[34ch] text-[15px] leading-[1.7] text-cocoa/70">
+                    <p className="mt-3 max-w-[34ch] text-[15px] leading-[1.7] text-cocoa/72">
                       {step.body}
                     </p>
                   </div>

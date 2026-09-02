@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
-    <section id="top" className="relative isolate min-h-[100svh] overflow-hidden bg-ink">
+    <section id="top" className="on-dark relative isolate min-h-[100svh] overflow-hidden bg-ink">
       <div className="hero-media absolute inset-0 -z-10">
         <FigureImage
           src={hero.image.src}

@@ -5,7 +5,7 @@ import { socialIcons } from "@/components/ui/Icons";
 
 export function Footer() {
   return (
-    <footer className="bg-ink pb-24 pt-20 md:pb-16 md:pt-24">
+    <footer className="on-dark bg-ink pb-24 pt-20 md:pb-16 md:pt-24">
       <Container>
         <div className="grid grid-cols-1 gap-x-12 gap-y-12 md:grid-cols-2 lg:grid-cols-4">
           <div>
@@ -24,7 +24,7 @@ export function Footer() {
           </div>
 
           <nav aria-label="Collections">
-            <p className="caption text-ivory/45">Collections</p>
+            <p className="caption text-ivory/62">Collections</p>
             <ul className="mt-6 flex flex-col gap-3">
               {footer.columns.collections.map((item) => (
                 <li key={item.label}>
@@ -40,7 +40,7 @@ export function Footer() {
           </nav>
 
           <div>
-            <p className="caption text-ivory/45">Visit</p>
+            <p className="caption text-ivory/62">Visit</p>
             <address className="mt-6 flex flex-col gap-3 not-italic text-[14px] text-ivory/72">
               <span>{site.address.full}</span>
               <a
@@ -59,7 +59,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="caption text-ivory/45">Follow</p>
+            <p className="caption text-ivory/62">Follow</p>
             <ul className="mt-6 flex items-center gap-5">
               {socialLinks.map((social) => {
                 const Icon = socialIcons[social.label];
@@ -84,7 +84,7 @@ export function Footer() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="text-[12px] uppercase tracking-[0.16em] text-ivory/50 transition-colors duration-300 hover:text-brass-lift"
+                  className="text-[12px] uppercase tracking-[0.16em] text-ivory/62 transition-colors duration-300 hover:text-brass-lift"
                 >
                   {item.label}
                 </a>
@@ -97,7 +97,7 @@ export function Footer() {
           className="mt-16 border-t pt-8 md:mt-20"
           style={{ borderColor: "var(--hairline)" }}
         >
-          <p className="text-[12px] tracking-[0.08em] text-ivory/45">{footer.copyright}</p>
+          <p className="text-[12px] tracking-[0.08em] text-ivory/62">{footer.copyright}</p>
         </div>
       </Container>
     </footer>

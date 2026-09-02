@@ -18,7 +18,7 @@ export function TrustStrip() {
   return (
     <section
       aria-label="What is included"
-      className="border-y bg-ink-soft"
+      className="on-dark border-y bg-ink-soft"
       style={{ borderColor: "var(--hairline)" }}
     >
       <Container className="hidden md:block">

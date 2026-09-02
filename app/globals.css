@@ -7,6 +7,7 @@
   --color-ivory-dim: #ebe3d6;
   --color-brass: #b08d57;
   --color-brass-lift: #c9a86a;
+  --color-brass-deep: #805f32;
   --color-cocoa: #3a2a20;
   --color-tan: #c8a882;
 
@@ -24,6 +25,19 @@
   --hairline-strong: rgba(176, 141, 87, 0.34);
   --body-on-ink: rgba(246, 241, 232, 0.72);
   --gutter: 24px;
+
+  /* Brass fails AA as text on ivory, so light grounds get the deeper cut. */
+  --brass-contextual: var(--color-brass-deep);
+  --brass-contextual-hover: #6b4f28;
+}
+
+.on-dark {
+  --brass-contextual: var(--color-brass);
+  --brass-contextual-hover: var(--color-brass-lift);
+}
+
+.brass-ctx {
+  color: var(--brass-contextual);
 }
 
 @media (min-width: 768px) {
@@ -147,7 +161,7 @@ button {
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--color-brass);
+  color: var(--brass-contextual);
 }
 
 @media (min-width: 768px) {
@@ -202,7 +216,7 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-brass);
+  color: var(--brass-contextual);
   font-size: 13px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -223,7 +237,7 @@ button {
 }
 
 .brass-link:hover {
-  color: var(--color-brass-lift);
+  color: var(--brass-contextual-hover);
 }
 
 .brass-link:hover::after,

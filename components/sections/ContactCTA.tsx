@@ -20,16 +20,16 @@ export function ContactCTA() {
           <Reveal>
             <p className="measure text-cocoa/80">{contact.body}</p>
 
-            <dl className="mt-10 border-t" style={{ borderColor: "var(--hairline-strong)" }}>
+            <div className="mt-10 border-t" style={{ borderColor: "var(--hairline-strong)" }}>
               <div
                 className="flex items-start gap-4 border-b py-6"
                 style={{ borderColor: "var(--hairline)" }}
               >
-                <IconPin size={18} className="mt-0.5 shrink-0 text-brass" />
+                <IconPin size={18} className="brass-ctx mt-0.5 shrink-0" />
                 <div>
-                  <dt className="caption text-cocoa/50">{contact.visitLabel}</dt>
-                  <dd className="mt-2 text-cocoa">{site.address.full}</dd>
-                  <dd className="mt-1 text-[14px] text-cocoa/62">{contact.landmark}</dd>
+                  <p className="caption text-cocoa/72">{contact.visitLabel}</p>
+                  <p className="mt-2 text-cocoa">{site.address.full}</p>
+                  <p className="mt-1 text-[14px] text-cocoa/72">{contact.landmark}</p>
                 </div>
               </div>
 
@@ -37,14 +37,14 @@ export function ContactCTA() {
                 className="flex items-start gap-4 border-b py-6"
                 style={{ borderColor: "var(--hairline)" }}
               >
-                <IconPhone size={18} className="mt-0.5 shrink-0 text-brass" />
+                <IconPhone size={18} className="brass-ctx mt-0.5 shrink-0" />
                 <div>
-                  <dt className="caption text-cocoa/50">Phone &amp; WhatsApp</dt>
-                  <dd className="tnum mt-2">
-                    <a href={telHref} className="text-cocoa transition-colors hover:text-brass">
+                  <p className="caption text-cocoa/72">Phone &amp; WhatsApp</p>
+                  <p className="tnum mt-2">
+                    <a href={telHref} className="text-cocoa transition-colors hover:text-brass-deep">
                       {site.phone.display}
                     </a>
-                  </dd>
+                  </p>
                 </div>
               </div>
 
@@ -52,20 +52,20 @@ export function ContactCTA() {
                 className="flex items-start gap-4 border-b py-6"
                 style={{ borderColor: "var(--hairline)" }}
               >
-                <IconMail size={18} className="mt-0.5 shrink-0 text-brass" />
+                <IconMail size={18} className="brass-ctx mt-0.5 shrink-0" />
                 <div>
-                  <dt className="caption text-cocoa/50">Email</dt>
-                  <dd className="mt-2">
+                  <p className="caption text-cocoa/72">Email</p>
+                  <p className="mt-2">
                     <a
                       href={mailtoHref}
-                      className="break-all text-cocoa transition-colors hover:text-brass"
+                      className="break-all text-cocoa transition-colors hover:text-brass-deep"
                     >
                       {site.email}
                     </a>
-                  </dd>
+                  </p>
                 </div>
               </div>
-            </dl>
+            </div>
 
             <div className="mt-10">
               <div
@@ -82,7 +82,7 @@ export function ContactCTA() {
                 />
               </div>
               <div className="mt-4 flex flex-wrap items-baseline justify-between gap-3">
-                <p className="caption text-cocoa/58">{contact.map.caption}</p>
+                <p className="caption text-cocoa/72">{contact.map.caption}</p>
                 <a
                   href={contact.map.href}
                   target="_blank"

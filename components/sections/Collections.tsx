@@ -48,13 +48,13 @@ function Tile({ item, index }: { item: Item; index: number }) {
             </h3>
             <p
               className={`mt-2.5 text-[15px] leading-[1.6] ${
-                isBespoke ? "text-ivory/62" : "text-cocoa/70"
+                isBespoke ? "text-ivory/62" : "text-cocoa/72"
               }`}
             >
               {item.description}
             </p>
           </div>
-          <IconArrow size={17} className="mt-2 shrink-0 text-brass" />
+          <IconArrow size={17} className="brass-ctx mt-2 shrink-0" />
         </div>
 
         <div className="figure-rule mt-5" />

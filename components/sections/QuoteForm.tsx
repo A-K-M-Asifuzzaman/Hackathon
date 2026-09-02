@@ -10,7 +10,7 @@ type Errors = Partial<Record<Field, string>>;
 const fieldCopy = contact.form.fields;
 
 const inputClass =
-  "mt-3 w-full min-h-[48px] border bg-transparent px-4 py-3 text-[15px] text-cocoa placeholder:text-cocoa/38 transition-colors duration-300 focus:border-brass";
+  "mt-3 w-full min-h-[48px] border bg-transparent px-4 py-3 text-[15px] text-cocoa placeholder:text-cocoa/55 transition-colors duration-300 focus:border-brass";
 
 export function QuoteForm() {
   const uid = useId();
@@ -57,13 +57,13 @@ export function QuoteForm() {
       style={{ borderColor: "var(--hairline-strong)" }}
     >
       <h3 className="h3 text-cocoa">{contact.form.heading}</h3>
-      <p className="mt-3 max-w-[42ch] text-[14px] leading-[1.65] text-cocoa/64">
+      <p className="mt-3 max-w-[42ch] text-[14px] leading-[1.65] text-cocoa/72">
         {contact.form.note}
       </p>
 
       <div className="mt-9 flex flex-col gap-7">
         <div>
-          <label htmlFor={`${uid}-name`} className="caption text-cocoa/62">
+          <label htmlFor={`${uid}-name`} className="caption text-cocoa/72">
             {fieldCopy.name.label}
           </label>
           <input
@@ -87,7 +87,7 @@ export function QuoteForm() {
         </div>
 
         <div>
-          <label htmlFor={`${uid}-phone`} className="caption text-cocoa/62">
+          <label htmlFor={`${uid}-phone`} className="caption text-cocoa/72">
             {fieldCopy.phone.label}
           </label>
           <input
@@ -112,7 +112,7 @@ export function QuoteForm() {
         </div>
 
         <div>
-          <label htmlFor={`${uid}-category`} className="caption text-cocoa/62">
+          <label htmlFor={`${uid}-category`} className="caption text-cocoa/72">
             {fieldCopy.category.label}
           </label>
           <select
@@ -142,7 +142,7 @@ export function QuoteForm() {
         </div>
 
         <div>
-          <label htmlFor={`${uid}-message`} className="caption text-cocoa/62">
+          <label htmlFor={`${uid}-message`} className="caption text-cocoa/72">
             {fieldCopy.message.label}
           </label>
           <textarea
@@ -174,13 +174,13 @@ export function QuoteForm() {
         {contact.form.submit}
       </button>
 
-      <p aria-live="polite" className="mt-5 min-h-[20px] text-[13px] text-brass">
+      <p aria-live="polite" className="brass-ctx mt-5 min-h-[20px] text-[13px]">
         {sent ? contact.form.success : ""}
       </p>
 
-      <p className="mt-1 text-[13px] text-cocoa/62">
+      <p className="mt-1 text-[13px] text-cocoa/72">
         {contact.form.emailFallback}{" "}
-        <a href={mailtoHref} className="text-brass underline underline-offset-4">
+        <a href={mailtoHref} className="brass-ctx underline underline-offset-4">
           {site.email}
         </a>
       </p>

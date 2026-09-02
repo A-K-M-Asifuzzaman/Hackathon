@@ -5,7 +5,7 @@ import { Reveal } from "@/components/ui/Reveal";
 
 export function WhyHeaven() {
   return (
-    <section id="why" className="section-pad bg-ink">
+    <section id="why" className="on-dark section-pad bg-ink">
       <Container>
         <SectionHeading
           index={whyHeaven.index}

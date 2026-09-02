@@ -36,8 +36,11 @@ export default function Page() {
       </main>
 
       <Footer />
-      <StickyMobileCTA />
-      <WhatsAppFab />
+
+      <aside aria-label="Quick contact">
+        <StickyMobileCTA />
+        <WhatsAppFab />
+      </aside>
     </>
   );
 }

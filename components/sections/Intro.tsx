@@ -42,7 +42,7 @@ export function Intro() {
               ratio="3/2"
               sizes="(max-width: 768px) 92vw, 88vw"
             />
-            <p className="caption mt-5 text-cocoa/58">{intro.image.caption}</p>
+            <p className="caption mt-5 text-cocoa/72">{intro.image.caption}</p>
           </div>
         </Reveal>
       </div>

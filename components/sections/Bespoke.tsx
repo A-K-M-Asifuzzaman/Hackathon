@@ -10,7 +10,7 @@ export function Bespoke() {
   return (
     <section
       id="bespoke"
-      className="relative isolate flex min-h-[85vh] items-center overflow-hidden bg-ink py-24"
+      className="on-dark relative isolate flex min-h-[85vh] items-center overflow-hidden bg-ink py-24"
     >
       <div className="absolute inset-0 -z-10 opacity-35">
         <FigureImage

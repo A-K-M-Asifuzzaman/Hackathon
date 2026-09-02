@@ -6,7 +6,7 @@ import { FigureImage } from "@/components/ui/FigureImage";
 
 export function Proof() {
   return (
-    <section id="clients" className="section-pad bg-ink">
+    <section id="clients" className="on-dark section-pad bg-ink">
       <Container>
         <div className="grid grid-cols-1 gap-x-16 gap-y-14 lg:grid-cols-12">
           <Reveal className="lg:col-span-4">
@@ -16,7 +16,7 @@ export function Proof() {
               ratio="4/5"
               sizes="(max-width: 1024px) 92vw, 400px"
             />
-            <p className="caption mt-5 text-ivory/50">{proof.image.caption}</p>
+            <p className="caption mt-5 text-ivory/62">{proof.image.caption}</p>
           </Reveal>
 
           <div className="lg:col-span-7 lg:col-start-6">
@@ -43,7 +43,7 @@ export function Proof() {
 
               <figcaption className="caption mt-8 text-brass">
                 {proof.attribution.name}
-                <span className="text-ivory/45"> — {proof.attribution.role}</span>
+                <span className="text-ivory/62"> — {proof.attribution.role}</span>
               </figcaption>
             </Reveal>
 

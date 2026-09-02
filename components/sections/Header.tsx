@@ -33,7 +33,7 @@ export function Header() {
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 transition-colors duration-500 ease-out"
+      className="on-dark fixed inset-x-0 top-0 z-50 transition-colors duration-500 ease-out"
       style={{
         backgroundColor: scrolled || menuOpen ? "var(--color-ink)" : "transparent",
         borderBottom: `1px solid ${
