@@ -76,7 +76,7 @@ export function ContactCTA() {
                   src={contact.map.embed}
                   title={contact.map.title}
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
+                  referrerPolicy="strict-origin-when-cross-origin"
                   className="h-full w-full"
                   style={{ border: 0, filter: "saturate(0.72) contrast(1.02)" }}
                 />
