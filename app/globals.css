@@ -1,0 +1,369 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #101f1d;
+  --color-ink-soft: #172a27;
+  --color-ivory: #f6f1e8;
+  --color-ivory-dim: #ebe3d6;
+  --color-brass: #b08d57;
+  --color-brass-lift: #c9a86a;
+  --color-cocoa: #3a2a20;
+  --color-tan: #c8a882;
+
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --radius-none: 0px;
+  --radius-hair: 2px;
+
+  --ease-editorial: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:root {
+  --hairline: rgba(176, 141, 87, 0.18);
+  --hairline-strong: rgba(176, 141, 87, 0.34);
+  --body-on-ink: rgba(246, 241, 232, 0.72);
+  --gutter: 24px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --gutter: 80px;
+  }
+}
+
+* {
+  border-color: var(--hairline);
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--color-ivory);
+  color: var(--color-cocoa);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+    line-height: 1.65;
+  }
+}
+
+::selection {
+  background-color: var(--color-brass);
+  color: var(--color-ivory);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+h3,
+h4 {
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brass-lift);
+  outline-offset: 3px;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- layout ---------- */
+
+.container-hfm {
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+.section-pad {
+  padding-block: clamp(72px, 12vh, 176px);
+}
+
+.section-pad-sm {
+  padding-block: clamp(56px, 8vh, 112px);
+}
+
+/* ---------- type ---------- */
+
+.h1 {
+  font-size: clamp(2.75rem, 7vw, 6.5rem);
+}
+
+.h2 {
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+}
+
+.h3 {
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+}
+
+@media (min-width: 768px) {
+  .eyebrow {
+    font-size: 12px;
+  }
+}
+
+.caption {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-variant-caps: all-small-caps;
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.on-ink {
+  color: var(--body-on-ink);
+}
+
+.measure {
+  max-width: 60ch;
+}
+
+.measure-tight {
+  max-width: 46ch;
+}
+
+/* ---------- rules ---------- */
+
+.hairline {
+  height: 1px;
+  width: 100%;
+  background-color: var(--hairline);
+}
+
+.hairline-strong {
+  height: 1px;
+  width: 100%;
+  background-color: var(--hairline-strong);
+}
+
+/* ---------- links ---------- */
+
+.brass-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-brass);
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+}
+
+.brass-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 100%;
+  background-color: currentColor;
+  transform: scaleX(0.28);
+  transform-origin: left;
+  transition: transform 600ms var(--ease-editorial), background-color 300ms linear;
+}
+
+.brass-link:hover {
+  color: var(--color-brass-lift);
+}
+
+.brass-link:hover::after,
+.brass-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ---------- images ---------- */
+
+.graded {
+  filter: saturate(0.92) contrast(1.04);
+}
+
+.figure-media {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-ivory-dim);
+}
+
+.figure-media img {
+  transition: transform 600ms var(--ease-editorial);
+  will-change: transform;
+}
+
+.figure-link:hover .figure-media img,
+.figure-link:focus-visible .figure-media img {
+  transform: scale(1.03);
+}
+
+.figure-rule {
+  height: 1px;
+  background-color: var(--color-brass);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 600ms var(--ease-editorial);
+}
+
+.figure-link:hover .figure-rule,
+.figure-link:focus-visible .figure-rule {
+  transform: scaleX(1);
+}
+
+/* ---------- reveal ---------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 700ms var(--ease-editorial), transform 700ms var(--ease-editorial);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes hero-settle {
+  from {
+    transform: scale(1.06);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-media {
+  animation: hero-settle 1400ms var(--ease-editorial) both;
+}
+
+@keyframes scroll-tick {
+  0%,
+  100% {
+    transform: scaleY(0.2);
+    transform-origin: top;
+  }
+  50% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+.scroll-tick {
+  animation: scroll-tick 2400ms var(--ease-editorial) infinite;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 28s linear infinite;
+}
+
+.marquee-viewport:hover .marquee-track,
+.marquee-viewport:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  .marquee-track {
+    animation: none;
+    transform: none;
+  }
+}
+
+/* ---------- skip link ---------- */
+
+.skip-link {
+  position: absolute;
+  left: 16px;
+  top: -100px;
+  z-index: 100;
+  background-color: var(--color-ink);
+  color: var(--color-ivory);
+  padding: 12px 20px;
+  border: 1px solid var(--color-brass);
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: top 200ms linear;
+}
+
+.skip-link:focus {
+  top: 16px;
+}
