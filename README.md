@@ -2,7 +2,7 @@
 
 A conversion-focused landing page for Heaven Furniture Mart, a bespoke furniture house on Agrabad Access Road in Chattogram, Bangladesh.
 
-**Live:** _not deployed yet_
+**Live:** https://heaven-furniture-mart-nu.vercel.app
 
 ![The Heaven Furniture Mart landing page](public/preview.jpg)
 

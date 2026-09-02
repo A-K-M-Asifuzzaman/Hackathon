@@ -43,3 +43,4 @@ screenshots/
 notes/
 scratch/
 *.log
+.vercel
