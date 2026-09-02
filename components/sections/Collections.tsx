@@ -29,7 +29,7 @@ function Tile({ item, index }: { item: Item; index: number }) {
         <FigureImage
           src={item.image.src}
           alt={item.image.alt}
-          ratio="4/5"
+          ratio={item.ratio}
           sizes="(max-width: 1024px) 92vw, (max-width: 1440px) 45vw, 560px"
           overlay={isBespoke ? "ink" : null}
         />
@@ -38,7 +38,11 @@ function Tile({ item, index }: { item: Item; index: number }) {
           <div>
             <h3
               className={`h3 ${isBespoke ? "text-ivory" : "text-cocoa"}`}
-              style={item.size === "feature" ? { fontSize: "clamp(1.6rem,2.6vw,2.35rem)" } : undefined}
+              style={
+                item.slug === "living"
+                  ? { fontSize: "clamp(1.6rem,2.6vw,2.35rem)" }
+                  : undefined
+              }
             >
               {item.name}
             </h3>

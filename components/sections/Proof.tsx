@@ -16,7 +16,7 @@ export function Proof() {
               ratio="4/5"
               sizes="(max-width: 1024px) 92vw, 400px"
             />
-            <p className="caption mt-5 text-ivory/50">{proof.attribution.name}</p>
+            <p className="caption mt-5 text-ivory/50">{proof.image.caption}</p>
           </Reveal>
 
           <div className="lg:col-span-7 lg:col-start-6">

@@ -15,7 +15,7 @@ export const hero = {
   secondaryCta: "WhatsApp Us",
   image: {
     src: "/images/hero-showroom.jpg",
-    alt: "Heaven Furniture Mart showroom in Agrabad, Chattogram, with a hand-built wooden sofa set and warm evening lighting",
+    alt: "Hand-carved sofa in navy velvet with a gilded frame, built by Heaven Furniture Mart",
   },
   stats: [
     { value: "500+", label: "Homes Furnished" },
@@ -42,7 +42,7 @@ export const intro = {
   link: { label: "See our collections", href: "#collections" },
   image: {
     src: "/images/showroom-wide.jpg",
-    alt: "Wide view of the Heaven Furniture Mart showroom floor with sofa sets, dining tables and wardrobes on display",
+    alt: "Marble-topped dining table with high-backed leather chairs on the Heaven Furniture Mart showroom floor",
     caption: "Agrabad Access Road, Chattogram",
   },
 } as const;
@@ -98,9 +98,9 @@ export const collections = {
       description: "Sofa sets, coffee tables, TV units and consoles.",
       image: {
         src: "/images/living-sofa-01.jpg",
-        alt: "Hand-built wooden sofa set with deep cushions in a warmly lit living room",
+        alt: "Carved sofa upholstered in navy velvet with a hand-gilded frame and embroidered back panel",
       },
-      size: "feature",
+      ratio: "4/5",
     },
     {
       slug: "bedroom",
@@ -108,9 +108,9 @@ export const collections = {
       description: "Beds, wardrobes, dressing tables and bedside tables.",
       image: {
         src: "/images/bedroom-wardrobe.jpg",
-        alt: "Custom-built bedroom wardrobe and bed frame in premium dark wood",
+        alt: "Emerald velvet upholstered bed with a channelled headboard, made to order",
       },
-      size: "medium",
+      ratio: "3/2",
     },
     {
       slug: "dining",
@@ -118,9 +118,9 @@ export const collections = {
       description: "Dining tables, chairs and display cabinets.",
       image: {
         src: "/images/dining-set.jpg",
-        alt: "Solid wood dining table with six matching chairs and a display cabinet behind",
+        alt: "Marble-topped dining table with carved timber legs and studded leather chairs",
       },
-      size: "medium",
+      ratio: "3/2",
     },
     {
       slug: "office",
@@ -128,9 +128,9 @@ export const collections = {
       description: "Executive tables, bookshelves and workstations.",
       image: {
         src: "/images/office-desk.jpg",
-        alt: "Executive office table in dark timber with a matching bookshelf",
+        alt: "Glass-fronted timber display cabinet with hand-carved cresting and gilded detail",
       },
-      size: "small",
+      ratio: "4/5",
     },
     {
       slug: "bespoke",
@@ -138,9 +138,9 @@ export const collections = {
       description: "Anything else — built to your own space, size and taste.",
       image: {
         src: "/images/bespoke-workshop.jpg",
-        alt: "Craftsman at the Heaven Furniture Mart workshop shaping a timber panel by hand",
+        alt: "A craftsman's hands setting nailhead trim into a gilded frame at the Heaven workshop",
       },
-      size: "small",
+      ratio: "4/5",
     },
   ],
   cta: "Explore",
@@ -153,8 +153,8 @@ export const bespoke = {
   body: "Any piece, any dimension, any finish — designed around the space you actually live in, then crafted in-house by our own team. Bring us a corner that nothing fits, and we will draw something that does.",
   cta: "Start Your Bespoke Piece",
   image: {
-    src: "/images/bespoke-workshop.jpg",
-    alt: "Timber being cut and shaped in the Heaven Furniture Mart workshop",
+    src: "/images/bespoke-texture.jpg",
+    alt: "Hand-embroidered floral upholstery on a gilded chair back, stitched in the Heaven workshop",
   },
 } as const;
 
@@ -209,8 +209,9 @@ export const proof = {
   },
   closing: "Trusted by hundreds of happy homeowners across Chattogram.",
   image: {
-    src: "/images/md-portrait.jpg",
-    alt: `${site.founder}, Managing Director of Heaven Furniture Mart, at the Agrabad showroom`,
+    src: "/images/proof-portrait.jpg",
+    alt: "Carved settee with silver-grey upholstery and embroidered cushions on the Agrabad showroom floor",
+    caption: "The showroom, Agrabad Access Road",
   },
 } as const;
 
@@ -218,9 +219,9 @@ export const contact = {
   index: "08",
   eyebrow: "Visit Us",
   heading: "Come and see the joinery",
-  body: "Walk the showroom on Agrabad Access Road, or send us the room you need furnished and we will come back to you the same day.",
+  body: "Walk the showroom on Agrabad Access Road and see the joinery and finishes in person, or send us the room you need furnished and we will take it from there.",
   visitLabel: "Showroom",
-  hours: "Open daily · Saturday to Thursday, 10:00–20:00 · Friday, 15:00–20:00",
+  landmark: "Opposite RAK Ceramics",
   form: {
     heading: "Request a free quote",
     note: "Tell us what you need. The form hands off to WhatsApp so you keep the conversation.",
@@ -251,10 +252,12 @@ export const contact = {
     },
   },
   map: {
-    src: "/images/map-agrabad.jpg",
-    alt: "Map showing the Heaven Furniture Mart showroom on Agrabad Access Road, Chattogram",
-    caption: "Agrabad Access Road, Chattogram",
+    title: "Map of the Heaven Furniture Mart showroom on Agrabad Access Road, Chattogram",
+    caption: "Opposite RAK Ceramics, Agrabad Access Road",
+    embed:
+      "https://www.google.com/maps?q=Heaven+Furniture+Mart,+Agrabad+Access+Road,+Chittagong&output=embed",
     href: "https://www.google.com/maps/search/?api=1&query=Heaven+Furniture+Mart+Agrabad+Access+Road+Chattogram",
+    linkLabel: "Open in Google Maps",
   },
 } as const;
 
