@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Heaven Furniture Mart
 
-## Getting Started
+A conversion-focused landing page for Heaven Furniture Mart, a bespoke furniture house on Agrabad Access Road in Chattogram, Bangladesh.
 
-First, run the development server:
+**Live:** _not deployed yet_
+
+![The Heaven Furniture Mart landing page](public/preview.jpg)
+
+## Tech stack
+
+- Next.js 15 (App Router) with TypeScript
+- Tailwind CSS v4, with the palette and type scale defined as tokens in `app/globals.css`
+- `next/font` for Fraunces and Inter, self-hosted and preloaded
+- `next/image` for every photograph, served as AVIF/WebP
+- No CMS, no database, no component library — the components here are hand-built
+
+## Design approach
+
+The page alternates dark and light sections — charcoal-teal hero, warm ivory studio intro, dark editorial list, ivory collections — so the rhythm reads like a printed catalogue rather than a template. The palette is deliberately narrow: ink, ivory, cocoa and a single brass accent that only ever appears as a hairline, an eyebrow label or an underline, never as a fill. Fraunces carries the headlines at genuinely large sizes with tight tracking; Inter does the quiet work in small letterspaced caps. Corners are square, there are no drop shadows, and surfaces are separated by 1px brass hairlines instead.
+
+Bespoke work is what actually distinguishes this business, so it gets its own full-bleed section with the largest type on the page, ahead of any individual product category. Everything on the page resolves to one of two actions: the consultation form, or WhatsApp.
+
+Two notes on the implementation. Brass at its brand value fails WCAG AA as text on ivory, so a deeper cut of the same hue is swapped in on light grounds via a `--brass-contextual` token, and the brand brass stays on dark sections where it passes comfortably. Scroll reveals are hidden only behind `@media (scripting: enabled)`, so the page is fully readable without JavaScript.
+
+## Local setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # lint app source
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+app/
+  layout.tsx           fonts, metadata, JSON-LD
+  page.tsx             composes the sections in order
+  globals.css          design tokens, base styles, utilities
+  opengraph-image.tsx  generated 1200x630 share image
+  icon.svg             brand mark
+components/
+  sections/            Header, Hero, TrustStrip, Intro, WhyHeaven, Collections,
+                       Bespoke, Process, Milestones, Proof, ContactCTA, QuoteForm, Footer
+  ui/                  Container, Eyebrow, SectionHeading, Button, Reveal,
+                       FigureImage, HairlineRule, StickyMobileCTA, WhatsAppFab, Icons
+lib/
+  content.ts           every string on the page
+  site.ts              address, phone, email, socials, WhatsApp link builder
+public/images/         showroom and product photography
+```
 
-To learn more about Next.js, take a look at the following resources:
+`lib/content.ts` is the single source of truth for copy — no strings are hardcoded in JSX.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The quote form has no backend. It validates client-side, then opens WhatsApp with the enquiry prefilled, with a `mailto:` fallback offered alongside it.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`FigureImage` checks that a file exists at build time and falls back to a designed placeholder panel carrying the caption, so a missing photograph never breaks the page.
 
-## Deploy on Vercel
+## Credit
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Built for the RACDOX Hackathon. Brand assets © Heaven Furniture Mart.
