@@ -44,3 +44,7 @@ notes/
 scratch/
 *.log
 .vercel
+
+# demo walkthrough (not part of the site)
+*.mp4
+captions.srt
